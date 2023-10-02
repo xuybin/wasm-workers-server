@@ -79,7 +79,7 @@ pub async fn serve(serve_options: ServeOptions) -> Result<Server> {
 
     let (hostname, port) = (serve_options.hostname.clone(), serve_options.port);
     //let serve_options = serve_options.clone();
-    let routes=  Data::new(serve_options.base_routes.clone());
+    let routes = Data::new(serve_options.base_routes.clone());
 
     let server = HttpServer::new(move || {
         // Initializes the app data for handlers
@@ -87,8 +87,6 @@ pub async fn serve(serve_options: ServeOptions) -> Result<Server> {
             <ServeOptions as TryInto<AppData>>::try_into(serve_options.clone())
                 .expect("failed initializing server"),
         );
-
-        
 
         let mut app = App::new()
             // enable logger
