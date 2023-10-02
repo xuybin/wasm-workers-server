@@ -84,8 +84,10 @@ jobs:
 
         if [ "${{ matrix.os }}" = "windows-latest" ]; then
           cp "target/${{ matrix.arch }}-${{ matrix.platform }}/release/wws.exe" ./out
+          npm -v >./out/npm.txt || node --version >./out/node.txt || echo 'no npm and no node' >./out/info.txt
         else
           cp "target/${{ matrix.arch }}-${{ matrix.platform }}/release/wws" ./out
+          npm -v >./out/npm.txt || node --version >./out/node.txt
         fi
 
         tar czvf "wws-${{ matrix.name }}-${{ matrix.arch }}.tar.gz" -C ./out .
