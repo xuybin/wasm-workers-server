@@ -7,6 +7,6 @@ license = { workspace = true }
 repository = { workspace = true }
 
 [dependencies]
-rust-embed = "6.6.1"
+rust-embed = "8.0.0"
 mime_guess = "2.0.4"
 actix-web = { workspace = true }
