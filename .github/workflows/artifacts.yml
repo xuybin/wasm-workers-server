@@ -74,6 +74,12 @@ jobs:
       run: |
         sudo apt-get update
         sudo apt-get install musl-tools
+    - name: Install deps (windows-latest)
+      if: ${{ matrix.build == 'windows-latest' }}
+      run: |
+        cd crates/panel/client 
+        npm i && npm run build
+        cd ../../
     - name: Build
       run: ${{env.CARGO}} build --verbose --release --target=${{ matrix.arch }}-${{ matrix.platform }} ${{ matrix.features }}
     - name: Tarball
