@@ -67,9 +67,10 @@
           "build",
           "--verbose", 
           "--release",
-          // apt install clang
+          // apt install clang llvm
           // cargo install cargo-xwin
           // rustup target add x86_64-pc-windows-msvc
+          // Failed to find tool. Is `ml64.exe` installed
           "--target",
           "x86_64-pc-windows-msvc"
         ],
