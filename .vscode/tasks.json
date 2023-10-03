@@ -49,6 +49,7 @@
           "--verbose", 
           "--release",
           // rustup target add x86_64-pc-windows-gnu
+          // apt install mingw-w64
           "--target",
           "x86_64-pc-windows-gnu"
         ],
