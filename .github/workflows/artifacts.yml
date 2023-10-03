@@ -74,8 +74,8 @@ jobs:
       run: |
         sudo apt-get update
         sudo apt-get install musl-tools
-    - name: Install deps (windows-latest)
-      if: ${{ matrix.build == 'windows-latest' }}
+    - name: NPM build deps (windows)
+      if: ${{ matrix.build == 'windows' }}
       run: |
         cd crates/panel/client 
         npm i && npm run build
